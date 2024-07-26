@@ -1,57 +1,35 @@
+import React from "react";
 import "./button.css";
 
 export interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
   primary?: boolean;
-  /**
-   * What background color to use
-   */
   backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
   size?: "small" | "medium" | "large";
-  /**
-   * Button contents
-   */
   label: string;
-  /**
-   * Optional click handler
-   */
   onClick?: () => void;
-  /**
-   * Type of button
-   */
-  type?: "primary" | "secondary" | "success" | "danger" | "warning" | "info";
-  /**
-   * HTML button type
-   */
+  type?: "primary" | "secondary";
+  flavor?: "default" | "hover" | "icon" | "disabled" | "disabledIcon";
   buttonType?: "button" | "submit" | "reset";
+  customStyles?: React.CSSProperties;
 }
 
-
-/**
- * Primary UI component for user interaction
- */
 export const Button = ({
   primary = false,
   size = "medium",
   backgroundColor,
   label,
   type = "primary",
+  flavor = "default",
   buttonType = "button",
+  customStyles,
   ...props
 }: ButtonProps) => {
-  const mode = `storybook-button--${type}`;
+  const mode = `button--${type}--${flavor}`;
   return (
     <button
       type={buttonType}
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
-      style={{ backgroundColor }}
+      className={["button", `button--${size}`, mode].join(" ")}
+      style={{ backgroundColor, ...customStyles }}
       {...props}
     >
       {label}

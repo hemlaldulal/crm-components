@@ -1,10 +1,10 @@
 .storybook-textarea {
-    font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;    
     font-weight: 400;
     border: 1px solid #ccc;
-    border-radius: 0.5em;
+    border-radius: 0.5rem;
     padding: 10px;
-    width: 30%;
+    width: 30rem;
     box-sizing: border-box;
   }
   .storybook-textarea--small {
