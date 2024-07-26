@@ -58,7 +58,7 @@ export const PrimaryHover: Story = {
 export const PrimaryIcon: Story = {
   args: {
     size: "medium",
-    label: "Button",
+    label: "+ Button",
     type: "primary",
     flavor: "icon",
   },
