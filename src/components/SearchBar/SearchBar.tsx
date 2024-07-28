@@ -1,4 +1,5 @@
 import React from "react";
+import { FaSearch } from "react-icons/fa";
 import "./Searchbar.css";
 
 export interface SearchBarProps {
@@ -36,9 +37,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         onKeyPress={handleKeyPress}
       />
       <button onClick={handleSearch} className="search-icon">
-        <span role="img" aria-label="search">
-          🔍
-        </span>
+        <FaSearch color="gray" />
       </button>
     </div>
   );
