@@ -1,4 +1,5 @@
 import DropDown from "./components/testComponents/Dropdown";
+import NavbarTest from "./components/testComponents/NavbarTest";
 import PaginationTest from "./components/testComponents/PaginationTest";
 import SearchBarTest from "./components/testComponents/SearchBar";
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
       <DropDown />
       <SearchBarTest />
       <PaginationTest />
+      <NavbarTest />
     </div>
   );
 };
