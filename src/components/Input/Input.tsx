@@ -7,6 +7,7 @@ export interface InputProps {
   placeholder: string;
   size?: "small" | "medium" | "large";
   backgroundColor?: string;
+  required?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -18,6 +19,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       placeholder,
       size = "medium",
       backgroundColor,
+      required = false,
       ...props
     },
     ref,
@@ -30,6 +32,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         style={{ backgroundColor }}
         placeholder={placeholder}
         ref={ref}
+        required={required}
         {...props}
       />
     );

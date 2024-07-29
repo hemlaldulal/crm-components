@@ -34,6 +34,7 @@ const Form: React.FC<FormProps> = ({ fields, onSubmit, buttonProps }) => {
             // id={field.name}
             type={field.type}
             placeholder={field.placeholder || ""}
+            required={true}
             {...register(field.name, field.validation)}
           />
           {errors[field.name] && (

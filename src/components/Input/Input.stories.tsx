@@ -23,6 +23,7 @@ Default.args = {
   placeholder: "Enter text",
   size: "medium",
   backgroundColor: "#ddd",
+  required: true,
 };
 
 export const Primary = Template.bind({});
