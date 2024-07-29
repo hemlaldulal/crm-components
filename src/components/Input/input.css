@@ -2,9 +2,9 @@
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   border: 1px solid #ddd;
-  border-radius: 3em;
+  border-radius: 0.2rem;
   padding: 10px 16px;
-  width: 100%;
+  width: 30%;
   box-sizing: border-box;
 }
 .storybook-input--primary {
@@ -28,4 +28,16 @@
 .storybook-input--large {
   font-size: 16px;
   padding: 12px 20px;
+}
+.input-container {
+  position: relative;
+  width: 30%;
+  margin: 0.5rem 0;
+}
+.error-message {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  top: 100%;
+  left: 0;
 }

@@ -148,7 +148,7 @@ export const SmallButton: Story = {
 export const MediumButton: Story = {
   args: {
     size: "medium",
-    label: "Button",
+    label: "+ Button",
     type: "primary",
     flavor: "disabledIcon",
   },

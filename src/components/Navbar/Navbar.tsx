@@ -14,9 +14,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   return (
     <div className="navbar">
-      <div className="navbar-left">
-        {/* Other left side elements can be added here */}
-      </div>
+      <div className="navbar-left"></div>
       <div className="navbar-right">
         <div className="notification">
           <IoMdNotificationsOutline />

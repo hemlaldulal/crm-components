@@ -13,7 +13,7 @@ export interface ButtonProps {
   customStyles?: React.CSSProperties;
 }
 
-export const Button = ({
+export const Button: React.FC<ButtonProps> = ({
   primary = false,
   size = "medium",
   backgroundColor,

@@ -1,51 +1,44 @@
-import type { Meta, StoryObj } from "@storybook/react";
-// import { fn } from "@storybook/addon-actions";
-import { Input } from "./Input";
+// src/components/Input/Input.stories.tsx
+import { Meta, StoryFn } from "@storybook/react";
+import { Input, InputProps } from "./Input";
 
-const meta: Meta<typeof Input> = {
+export default {
   title: "Components/Input",
   component: Input,
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
+    placeholder: { control: "text" },
+    size: {
+      control: { type: "select", options: ["small", "medium", "large"] },
+    },
     backgroundColor: { control: "color" },
+    primary: { control: "boolean" },
+    onChange: { action: "changed" },
   },
+} as Meta<typeof Input>;
+
+const Template: StoryFn<InputProps> = (args) => <Input {...args} />;
+
+export const Default = Template.bind({});
+Default.args = {
+  placeholder: "Enter text",
+  size: "medium",
+  backgroundColor: "#ddd",
 };
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Primary: Story = {
-  args: {
-    primary: true,
-    placeholder: "Enter text",
-  },
+export const Primary = Template.bind({});
+Primary.args = {
+  placeholder: "Primary input",
+  size: "medium",
 };
 
-export const Secondary: Story = {
-  args: {
-    placeholder: "Enter text",
-  },
+export const Large = Template.bind({});
+Large.args = {
+  placeholder: "Large input",
+  size: "large",
 };
 
-export const Large: Story = {
-  args: {
-    size: "large",
-    placeholder: "Enter text",
-  },
-};
-
-export const Medium: Story = {
-  args: {
-    size: "medium",
-    placeholder: "Enter text",
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: "small",
-    placeholder: "Enter text",
-  },
+export const Small = Template.bind({});
+Small.args = {
+  placeholder: "Small input",
+  size: "small",
 };
