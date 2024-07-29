@@ -3,7 +3,7 @@
   display: inline-block;
   width: 418px;
   font-family: "Inter";
-  height: 269px;
+  height: auto;
 }
 
 .dropdown-label {
@@ -34,6 +34,17 @@
   margin-top: 4px;
   z-index: 1;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.dropdown-search {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #CBD2E0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 8px;
 }
 
 .dropdown-group {
@@ -50,4 +61,10 @@
 .dropdown-item:hover,
 .dropdown-item.selected {
   background-color: #f1f1f1;
+}
+
+.dropdown-no-results {
+  padding: 10px;
+  font-size: 16px;
+  color: #666666;
 }

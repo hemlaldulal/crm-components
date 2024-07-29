@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import "./input.css";
 
 export interface InputProps {
@@ -10,22 +10,30 @@ export interface InputProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Input: React.FC<InputProps> = ({
-  name,
-  type = "text",
-  placeholder,
-  size = "medium",
-  backgroundColor,
-  ...props
-}) => {
-  return (
-    <input
-      name={name}
-      type={type}
-      className={["storybook-input", `storybook-input--${size}`].join(" ")}
-      style={{ backgroundColor }}
-      placeholder={placeholder}
-      {...props}
-    />
-  );
-};
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  (
+    {
+      name,
+      type = "text",
+      placeholder,
+      size = "medium",
+      backgroundColor,
+      ...props
+    },
+    ref,
+  ) => {
+    return (
+      <input
+        name={name}
+        type={type}
+        className={["storybook-input", `storybook-input--${size}`].join(" ")}
+        style={{ backgroundColor }}
+        placeholder={placeholder}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
+);
+
+Input.displayName = "Input";

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import "./dropdown.css";
 
 export type DropdownItem = string;
@@ -18,6 +18,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
 }) => {
   const [selected, setSelected] = useState<string | undefined>(defaultSelect);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   const handleSelect = (item: string) => {
     setSelected(item);
@@ -27,6 +28,14 @@ export const Dropdown: React.FC<DropdownProps> = ({
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
+  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredItems = items
+    .flat()
+    .filter((item) => item.toLowerCase().includes(searchTerm.toLowerCase()));
+
   return (
     <div className="dropdown">
       <button className="dropdown-label" onClick={toggleDropdown}>
@@ -35,11 +44,18 @@ export const Dropdown: React.FC<DropdownProps> = ({
       </button>
       {isOpen && (
         <div className="dropdown-content">
-          {items.map((group, index) => (
-            <div key={index} className="dropdown-group">
-              {group.map((item, itemIndex) => (
+          <input
+            type="text"
+            placeholder="Search..."
+            className="dropdown-search"
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
+          {filteredItems.length ? (
+            <div className="dropdown-group">
+              {filteredItems.map((item, index) => (
                 <div
-                  key={itemIndex}
+                  key={index}
                   className={`dropdown-item ${item === selected ? "selected" : ""}`}
                   onClick={() => handleSelect(item)}
                 >
@@ -47,7 +63,9 @@ export const Dropdown: React.FC<DropdownProps> = ({
                 </div>
               ))}
             </div>
-          ))}
+          ) : (
+            <div className="dropdown-no-results">No results found</div>
+          )}
         </div>
       )}
     </div>

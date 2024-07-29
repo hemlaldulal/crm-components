@@ -47,9 +47,9 @@ export const WithDefaultSelect: Story = {
     label: "Select an item",
     items: [
       ["Option 1", "Option 2", "Option 3"],
-      ["Option 4", "Option 5", "Option 6"],
+      ["Option 4", "item", "Apple"],
     ],
-    defaultSelect: "Option 2",
+    defaultSelect: "Select",
     onSelect: action("selected"),
   },
 };

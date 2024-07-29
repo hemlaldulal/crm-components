@@ -31,7 +31,7 @@ const Form: React.FC<FormProps> = ({ fields, onSubmit, buttonProps }) => {
         <div key={field.name} className="form-group">
           <label htmlFor={field.name}>{field.label}</label>
           <Input
-            // id={index}
+            // id={field.name}
             type={field.type}
             placeholder={field.placeholder || ""}
             {...register(field.name, field.validation)}
