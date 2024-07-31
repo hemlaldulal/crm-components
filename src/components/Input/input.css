@@ -4,8 +4,14 @@
   border: 1px solid #ddd;
   border-radius: 0.2rem;
   padding: 10px 16px;
-  width: 30%;
+  width: 100%;
   box-sizing: border-box;
+}
+
+.storybook-input:focus {
+  border-color: #6366f1;
+  outline: none;
+  box-shadow: 0 0 0 0 #6366f1;
 }
 .storybook-input--primary {
   border-color: #1ea7fd;
@@ -17,6 +23,7 @@
   background-color: #f9f9f9;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
 }
+
 .storybook-input--small {
   font-size: 12px;
   padding: 8px 12px;

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 1164px;
   height: 69px;
   padding: 0 20px;
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
@@ -10,8 +10,6 @@
   border-bottom: 2px solid #888484;
 }
 
-.navbar-left {
-}
 
 .navbar-right {
   display: flex;
